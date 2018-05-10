@@ -2,6 +2,7 @@ package characters.villians;
 
 import behaviours.ISpell;
 import characters.Character;
+import characters.monsters.MythicalCreature;
 import spells.Spell;
 
 import java.util.ArrayList;
@@ -10,10 +11,13 @@ public abstract class Villian extends Character implements ISpell {
 
     private Spell spell;
     ArrayList<Spell> spellSelection;
+    private MythicalCreature familiar;
 
-    public Villian(String name, int maxHealthPoints, ArrayList<Spell> spellSelection) {
+    public Villian(String name, int maxHealthPoints, ArrayList<Spell> spellSelection, MythicalCreature familiar) {
         super(name, maxHealthPoints);
+        this.spell = spell;
         this.spellSelection = spellSelection;
+        this.familiar = familiar;
     }
 
     public ArrayList<Spell> getSpellSelection() {
@@ -35,5 +39,11 @@ public abstract class Villian extends Character implements ISpell {
         }
     }
 
+    public MythicalCreature getFamiliar() {
+        return familiar;
+    }
 
+    public void setFamiliar(MythicalCreature familiar) {
+        this.familiar = familiar;
+    }
 }
