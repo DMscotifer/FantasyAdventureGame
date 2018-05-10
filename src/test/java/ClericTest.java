@@ -1,5 +1,6 @@
 import characters.heroes.Cleric;
 import healingTools.HealingTool;
+import healingTools.Herb;
 import healingTools.Potion;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,10 +16,12 @@ public class ClericTest {
     ArrayList<HealingTool> healingGear;
     ArrayList<Weapon> weaponSelection;
     Potion potion;
+    Herb herb;
 
 
     @Before
     public void before(){
+        herb = new Herb("Blue Herbs", 2);
         potion = new Potion("Potion of Cure Light Wound", 2);
         healingGear = new ArrayList<HealingTool>();
         healingGear.add(potion);
@@ -35,6 +38,13 @@ public class ClericTest {
     public void canHealWithPotion() {
         cleric.setCurrentHealthPoints(13);
         cleric.healWithTool(cleric, potion);
+        assertEquals(15, cleric.getCurrentHealthPoints());
+    }
+
+    @Test
+    public void canHealWithSpecialHerbs() {
+        cleric.setCurrentHealthPoints(1);
+        cleric.healWithTool(cleric, herb);
         assertEquals(15, cleric.getCurrentHealthPoints());
     }
 }
