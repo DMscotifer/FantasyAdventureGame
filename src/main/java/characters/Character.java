@@ -3,22 +3,24 @@ package characters;
 public abstract class Character {
 
     private String name;
-    private int healthPoints;
+    private int maxHealthPoints;
+    private int currentHealthPoints;
 
-    public Character(String name, int healthPoints) {
+    public Character(String name, int maxHealthPoints) {
         this.name = name;
-        this.healthPoints = healthPoints;
+        this.maxHealthPoints = maxHealthPoints;
+        this.currentHealthPoints = maxHealthPoints;
     }
 
     public String getName() {
         return name;
     }
 
-    public int getHealthPoints() {
-        return healthPoints;
+    public int getMaxHealthPoints() {
+        return maxHealthPoints;
     }
 
-    public void setHealthPoints(int healthPoints) {
-        this.healthPoints = healthPoints;
+    public void setMaxHealthPoints(int maxHealthPoints) {
+        this.maxHealthPoints = maxHealthPoints;
     }
 }

@@ -17,4 +17,12 @@ public class BarbarianTest {
     public void hasName() {
         assertEquals("Conan", barbarian.getName());
     }
+
+    @Test
+    public void hasHealthPoints() {
+        assertEquals(10, barbarian.getMaxHealthPoints());
+    }
+
+    
+
 }
