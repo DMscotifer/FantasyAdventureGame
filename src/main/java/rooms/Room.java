@@ -13,11 +13,11 @@ public class Room {
     ArrayList<Treasure> loot;
     ArrayList<HealingTool> healingTool;
 
-    public Room(String description) {
+    public Room(String description, ArrayList<MythicalCreature> monsters, ArrayList<Treasure> loot, ArrayList<HealingTool> healingTool) {
         this.description = description;
-        this.monsters = new ArrayList<MythicalCreature>();
-        this.loot = new ArrayList<Treasure>();
-        this.healingTool = new ArrayList<HealingTool>();
+        this.monsters = monsters;
+        this.loot = loot;
+        this.healingTool = healingTool;
     }
 
     public String getDescription() {
