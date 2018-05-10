@@ -11,7 +11,7 @@ public abstract class Character {
     private int currentHealthPoints;
     private ArrayList<Treasure> inventory;
 
-    public Character(String name, int maxHealthPoints) {
+    public Character(String name, int maxHealthPoints, ArrayList<Treasure> inventory) {
         this.name = name;
         this.maxHealthPoints = maxHealthPoints;
         this.currentHealthPoints = maxHealthPoints;

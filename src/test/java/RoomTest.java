@@ -15,13 +15,15 @@ public class RoomTest {
     Room room1;
     ArrayList<MythicalCreature> monsters;
     ArrayList<Treasure> treasure;
+    ArrayList<Treasure> inventory;
     ArrayList<HealingTool> healingTools;
     Treasure gem;
     Dragon monster;
 
     @Before
     public void before(){
-        monster = new Dragon("Red Dragon", 20, 5);
+        inventory = new ArrayList<Treasure>();
+        monster = new Dragon("Red Dragon", 20, 5, inventory);
         gem = new Treasure("Ruby", 500);
         monsters = new ArrayList<MythicalCreature>();
         treasure = new ArrayList<Treasure>();

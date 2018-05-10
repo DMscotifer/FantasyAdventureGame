@@ -4,11 +4,16 @@ import behaviours.IAttack;
 import behaviours.IDefend;
 import characters.Character;
 import characters.villians.Villian;
+import treasures.Treasure;
+
+import java.util.ArrayList;
 
 public abstract class MythicalCreature extends Character implements IDefend {
 
-    public MythicalCreature(String name, int healthPoints) {
-        super(name, healthPoints);
+    private ArrayList<Treasure> inventory;
+
+    public MythicalCreature(String name, int healthPoints, ArrayList<Treasure> inventory) {
+        super(name, healthPoints, inventory);
     }
 
     public void defend(Villian master){

@@ -7,6 +7,7 @@ import characters.villians.Wizard;
 import org.junit.Before;
 import org.junit.Test;
 import spells.Spell;
+import treasures.Treasure;
 import weapons.Sword;
 import weapons.Weapon;
 
@@ -20,6 +21,7 @@ public class WizardTest {
     Wizard wizard;
     Spell spell;
     ArrayList<Spell> grimoire;
+    ArrayList<Treasure> inventory;
     Dragon familiar1;
     Ogre familiar2;
     Barbarian barbarian;
@@ -29,17 +31,18 @@ public class WizardTest {
 
     @Before
     public void before(){
-        familiar1 = new Dragon("Red Dragon", 20, 5);
-        familiar2 = new Ogre("Ogre", 15);
+        inventory = new ArrayList<Treasure>();
+        familiar1 = new Dragon("Red Dragon", 20, 5, inventory);
+        familiar2 = new Ogre("Ogre", 15, inventory);
         spell = new Spell("Magic Missile", 5);
         grimoire = new ArrayList<Spell>();
         grimoire.add(spell);
-        wizard = new Wizard("Thulsa Doom", 8, grimoire, familiar1);
-        wizard2 = new Wizard("Madam Mim", 10, grimoire, familiar2);
+        wizard = new Wizard("Thulsa Doom", 8, grimoire, familiar1, inventory);
+        wizard2 = new Wizard("Madam Mim", 10, grimoire, familiar2, inventory);
         sword = new Sword(2);
         weapons = new ArrayList<Weapon>();
         weapons.add(sword);
-        barbarian = new Barbarian("Conan", 10, weapons, sword);
+        barbarian = new Barbarian("Conan", 10, weapons, sword, inventory);
     }
 
     @Test

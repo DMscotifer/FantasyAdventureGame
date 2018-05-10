@@ -1,11 +1,16 @@
 package characters.monsters;
 
 import characters.villians.Villian;
+import treasures.Treasure;
+
+import java.util.ArrayList;
 
 public class Ogre extends MythicalCreature {
 
-    public Ogre(String name, int healthPoints) {
-        super(name, healthPoints);
+    private ArrayList<Treasure> inventory;
+
+    public Ogre(String name, int healthPoints, ArrayList<Treasure> inventory) {
+        super(name, healthPoints, inventory);
     }
 
     public void defend(){

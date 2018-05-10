@@ -4,6 +4,7 @@ import healingTools.Herb;
 import healingTools.Potion;
 import org.junit.Before;
 import org.junit.Test;
+import treasures.Treasure;
 import weapons.Weapon;
 
 import java.util.ArrayList;
@@ -15,6 +16,7 @@ public class ClericTest {
     Cleric cleric;
     ArrayList<HealingTool> healingGear;
     ArrayList<Weapon> weaponSelection;
+    ArrayList<Treasure> inventory;
     Potion potion;
     Herb herb;
 
@@ -27,7 +29,8 @@ public class ClericTest {
         healingGear.add(potion);
         healingGear.add(herb);
         weaponSelection = new ArrayList<Weapon>();
-        cleric = new Cleric("Jozan", 15, weaponSelection, null, healingGear);
+        inventory = new ArrayList<Treasure>();
+        cleric = new Cleric("Jozan", 15, weaponSelection, null, healingGear, inventory);
     }
 
     @Test
