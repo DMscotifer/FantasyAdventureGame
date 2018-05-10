@@ -86,9 +86,10 @@ public class WizardTest {
         familiar1.defend(wizard);
         assertEquals(18, familiar1.getCurrentHealthPoints());
     }
-//
-//    @Test
-//    public void canChangeFamiliar() {
-//        assertEquals(familiar2, wizard.getFamiliar());
-//    }
+
+    @Test
+    public void canChangeFamiliar() {
+        wizard.setFamiliar(familiar2);
+        assertEquals(familiar2, wizard.getFamiliar());
+    }
 }
