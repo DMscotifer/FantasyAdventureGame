@@ -29,7 +29,7 @@ public class WizardTest {
 
     @Before
     public void before(){
-        familiar1 = new Dragon("Red Dragon", 20);
+        familiar1 = new Dragon("Red Dragon", 20, 5);
         familiar2 = new Ogre("Ogre", 15);
         spell = new Spell("Magic Missile", 5);
         grimoire = new ArrayList<Spell>();
@@ -79,4 +79,16 @@ public class WizardTest {
         familiar1.defend(wizard);
         assertEquals(8, wizard.getCurrentHealthPoints());
     }
+
+    @Test
+    public void canLoseHealthFromDefendingWizard() {
+        barbarian.attack(wizard);
+        familiar1.defend(wizard);
+        assertEquals(18, familiar1.getCurrentHealthPoints());
+    }
+//
+//    @Test
+//    public void canChangeFamiliar() {
+//        assertEquals(familiar2, wizard.getFamiliar());
+//    }
 }
