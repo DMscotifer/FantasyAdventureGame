@@ -18,4 +18,14 @@ public abstract class Villian extends Character {
     public ArrayList<Spell> getSpellSelection() {
         return spellSelection;
     }
+
+    public Spell searchSpellSelection(String spellName){
+        for (Spell spell : spellSelection){
+            if (spell.getName() == spellName) {
+                return spell;
+            }
+        }
+        return null;
+    }
+
 }

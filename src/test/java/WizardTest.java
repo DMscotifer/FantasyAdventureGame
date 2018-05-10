@@ -28,8 +28,13 @@ public class WizardTest {
         assertEquals(1, wizard.getSpellSelection().size());
     }
 
-    //    @Test
-//    public void canGetSpellFromSpellSelection() {
-//        assertEquals("Magic Missile", wizard.getSpellSelection.);
-//    }
+    @Test
+    public void canGetSpellFromSpellSelection() {
+        assertEquals("Magic Missile", wizard.getSpellSelection().get(0).getName());
+    }
+
+    @Test
+    public void canSearchSpellByName() {
+        assertEquals(spell, wizard.searchSpellSelection("Magic Missile"));
+    }
 }
