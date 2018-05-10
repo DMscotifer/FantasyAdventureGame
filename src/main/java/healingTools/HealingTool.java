@@ -1,6 +1,9 @@
 package healingTools;
 
-public abstract class HealingTool {
+import behaviours.Healable;
+import characters.Character;
+
+public abstract class HealingTool implements Healable{
 
     private String name;
     private int healingPower;
@@ -16,5 +19,12 @@ public abstract class HealingTool {
 
     public int getHealingPower() {
         return healingPower;
+    }
+
+    public void heal(Character target){
+        target.setCurrentHealthPoints(target.getCurrentHealthPoints() + this.healingPower);
+        if (target.getCurrentHealthPoints() > target.getMaxHealthPoints()){
+            target.setCurrentHealthPoints(target.getMaxHealthPoints());
+        }
     }
 }

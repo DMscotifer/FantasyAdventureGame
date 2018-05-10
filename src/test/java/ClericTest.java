@@ -30,4 +30,11 @@ public class ClericTest {
     public void canGetHealingPower() {
         assertEquals(2, potion.getHealingPower());
     }
+
+    @Test
+    public void canHealWithPotion() {
+        cleric.setCurrentHealthPoints(13);
+        cleric.healWithTool(cleric, potion);
+        assertEquals(15, cleric.getCurrentHealthPoints());
+    }
 }
