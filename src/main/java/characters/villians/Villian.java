@@ -1,11 +1,12 @@
 package characters.villians;
 
+import behaviours.ISpell;
 import characters.Character;
 import spells.Spell;
 
 import java.util.ArrayList;
 
-public abstract class Villian extends Character {
+public abstract class Villian extends Character implements ISpell {
 
     private Spell spell;
     ArrayList<Spell> spellSelection;
@@ -27,5 +28,12 @@ public abstract class Villian extends Character {
         }
         return null;
     }
+
+    public void spellAttack(String spellChoice, Character target){
+        if (this.searchSpellSelection(spellChoice) != null){
+            target.setCurrentHealthPoints(target.getCurrentHealthPoints() - searchSpellSelection(spellChoice).getDmgValue());
+        }
+    }
+
 
 }
