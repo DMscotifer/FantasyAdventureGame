@@ -20,7 +20,11 @@ public abstract class Character {
         return maxHealthPoints;
     }
 
-    public void setMaxHealthPoints(int maxHealthPoints) {
-        this.maxHealthPoints = maxHealthPoints;
+    public int getCurrentHealthPoints() {
+        return currentHealthPoints;
+    }
+
+    public void setCurrentHealthPoints(int currentHealthPoints) {
+        this.currentHealthPoints = currentHealthPoints;
     }
 }
