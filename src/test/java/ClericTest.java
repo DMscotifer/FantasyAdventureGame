@@ -25,6 +25,7 @@ public class ClericTest {
         potion = new Potion("Potion of Cure Light Wound", 2);
         healingGear = new ArrayList<HealingTool>();
         healingGear.add(potion);
+        healingGear.add(herb);
         weaponSelection = new ArrayList<Weapon>();
         cleric = new Cleric("Jozan", 15, weaponSelection, null, healingGear);
     }
@@ -46,5 +47,10 @@ public class ClericTest {
         cleric.setCurrentHealthPoints(1);
         cleric.healWithTool(cleric, herb);
         assertEquals(15, cleric.getCurrentHealthPoints());
+    }
+
+    @Test
+    public void canSearchThroughHealingToolsArray() {
+        assertEquals(herb, cleric.searchHealingTools("Blue Herbs"));
     }
 }

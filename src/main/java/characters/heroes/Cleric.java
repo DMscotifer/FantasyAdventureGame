@@ -1,6 +1,7 @@
 package characters.heroes;
 
 import healingTools.HealingTool;
+import spells.Spell;
 import weapons.Weapon;
 import characters.Character;
 
@@ -17,6 +18,15 @@ public class Cleric extends Hero {
 
     public void healWithTool(Character target, HealingTool choice){
         choice.heal(target);
+    }
+
+    public HealingTool searchHealingTools(String toolName){
+        for (HealingTool healingTool : healingTools){
+            if (healingTool.getName() == toolName) {
+                return healingTool;
+            }
+        }
+        return null;
     }
 
 
